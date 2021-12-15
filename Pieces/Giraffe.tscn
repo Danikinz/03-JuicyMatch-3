@@ -4,14 +4,8 @@
 [ext_resource path="res://Assets/giraffe.png" type="Texture" id=2]
 
 [node name="Giraffe" instance=ExtResource( 1 )]
+scale = Vector2( 0.25, 0.25 )
 color = "Giraffe"
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource( 2 )
-
-[node name="Selected" parent="." index="1"]
-emitting = false
-
-[node name="Select" parent="Selected" index="0"]
-visible = false
 texture = ExtResource( 2 )

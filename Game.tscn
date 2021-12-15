@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Grid/grid.gd" type="Script" id=1]
 [ext_resource path="res://Pieces/Piece Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/HUD.gd" type="Script" id=3]
+[ext_resource path="res://UI/Camera.gd" type="Script" id=4]
 
 [node name="Game" type="Node2D"]
 
@@ -10,9 +11,9 @@
 script = ExtResource( 1 )
 width = 4
 height = 5
-xStart = 96
+xStart = 80
 yStart = 832
-offset = 128
+offset = 70
 background = ExtResource( 2 )
 
 [node name="HUD" type="Control" parent="."]
@@ -27,3 +28,8 @@ __meta__ = {
 margin_right = 576.0
 margin_bottom = 20.0
 text = "Score: "
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = ExtResource( 4 )

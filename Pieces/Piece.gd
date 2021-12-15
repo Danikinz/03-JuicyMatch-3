@@ -11,7 +11,7 @@ var highlight = Color(1,0.8,0,1)
 var dying = false
 
 func _ready():
-	default_modulate = modulate
+	default_modulate = modulate 
 
 func _physics_process(_delta):
 	if dying:
@@ -21,8 +21,7 @@ func _physics_process(_delta):
 			modulate = highlight
 	else:
 		if modulate != default_modulate:
-			modulate = default_modulate
-		
+			modulate = default_modulate 
 
 func move_piece(change):
 	target_position = position + change

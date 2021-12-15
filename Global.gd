@@ -20,5 +20,8 @@ func _unhandled_input(event):
 		get_tree().quit()
 
 func change_score(s):
+	var camera = get_node_or_null("/root/Game/Camera")
+	if camera:
+		camera.add_trauma(.5)
 	score += s
 	emit_signal("changed")

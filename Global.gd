@@ -1,6 +1,7 @@
 extends Node
 
 var score = 0
+var level = 1
 signal changed
 var scores = {
 	0:0,
@@ -24,4 +25,11 @@ func change_score(s):
 	if camera:
 		camera.add_trauma(.5)
 	score += s
+	emit_signal("changed")
+
+func change_level(s):
+	var camera = get_node_or_null("/root/Game/Camera")
+	if camera:
+		camera.add_trauma(.5)
+	level += s 
 	emit_signal("changed")

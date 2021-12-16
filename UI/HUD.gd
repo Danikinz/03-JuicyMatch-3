@@ -6,3 +6,6 @@ func _ready():
 
 func _on_score_changed():
 	$Score.text = "Score: " + str(Global.score)
+	
+func _on_level_changed():
+	$Level.text = "Level: " + str(Global.level)

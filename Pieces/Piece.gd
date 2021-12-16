@@ -29,3 +29,7 @@ func move_piece(change):
 
 func die():
 	dying = true;
+
+
+func _on_Timer_timeout():
+	pass # Replace with function body.

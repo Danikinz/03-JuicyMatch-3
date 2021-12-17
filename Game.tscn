@@ -119,6 +119,9 @@ margin_right = 540.0
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 2 )
 text = "Level:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0

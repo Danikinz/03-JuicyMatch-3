@@ -21,16 +21,19 @@ var Explosion = preload("res://Explosion/Explosion.tscn")
 
 func _ready():
 	default_modulate = modulate 
+	$Selected.emitting = false
 
 func _physics_process(_delta):
 	if dying:
 		queue_free()
 	if selected:
-		if modulate != highlight:
-			modulate = highlight
+		if $Select.visible != true:
+			$Select.show()
+			$Selected.emitting = true
 	else:
-		if modulate != default_modulate:
-			modulate = default_modulate 
+		if $Select.visible == true:
+			$Select.hide()
+			$Selected.emitting = false 
 
 func move_piece(change):
 	target_position = position + change

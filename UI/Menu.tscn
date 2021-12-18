@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Musical.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 
-[sub_resource type="Shader" id=4]
+[sub_resource type="Shader" id=1]
 code = "// original wind shader from https://github.com/Maujoe/godot-simple-wind-shader-2d/tree/master/assets/maujoe.simple_wind_shader_2d
 // original script modified by HungryProton so that the assets are moving differently : https://pastebin.com/VL3AfV8D
 //
@@ -50,8 +50,8 @@ void vertex() {
     VERTEX.x += getWind(VERTEX.xy, UV, time);
 }"
 
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.05
 shader_param/maxStrength = 0.01
@@ -62,7 +62,7 @@ shader_param/distortion = null
 shader_param/heightOffset = null
 shader_param/offset = 0.0
 
-[sub_resource type="Shader" id=6]
+[sub_resource type="Shader" id=3]
 code = "// original wind shader from https://github.com/Maujoe/godot-simple-wind-shader-2d/tree/master/assets/maujoe.simple_wind_shader_2d
 // original script modified by HungryProton so that the assets are moving differently : https://pastebin.com/VL3AfV8D
 //
@@ -107,8 +107,8 @@ void vertex() {
     VERTEX.x += getWind(VERTEX.xy, UV, time);
 }"
 
-[sub_resource type="ShaderMaterial" id=7]
-shader = SubResource( 6 )
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
 shader_param/speed = 2.0
 shader_param/minStrength = 0.05
 shader_param/maxStrength = 0.01
@@ -119,13 +119,13 @@ shader_param/distortion = null
 shader_param/heightOffset = null
 shader_param/offset = 0.0
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 3 )
 
 [node name="Menu" type="Control"]
@@ -137,13 +137,13 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 5 )
+material = SubResource( 2 )
 scale = Vector2( 4.5, 8 )
 texture = ExtResource( 4 )
 centered = false
 
 [node name="Desert" type="Sprite" parent="."]
-material = SubResource( 7 )
+material = SubResource( 4 )
 position = Vector2( -238.991, -23.6328 )
 texture = ExtResource( 2 )
 centered = false
@@ -161,7 +161,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 margin_right = 576.0
 margin_bottom = 512.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 5 )
 text = " Outlandia
 "
 align = 1
@@ -175,7 +175,7 @@ margin_left = 238.0
 margin_top = 512.0
 margin_right = 338.0
 margin_bottom = 552.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -186,7 +186,7 @@ margin_left = 238.0
 margin_top = 562.0
 margin_right = 338.0
 margin_bottom = 602.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 7 )
 text = "Quit"
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
